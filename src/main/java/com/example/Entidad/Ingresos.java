@@ -1,8 +1,4 @@
 package com.example.Entidad;
-import javax.persistence.Entity;
-import javax.persistence.GeneratedValue;
-import javax.persistence.GenerationType;
-import javax.persistence.Id;
 import javax.persistence.*;
 
 @Entity
@@ -19,7 +15,10 @@ public class Ingresos {
     @Column(name = "ingresoMensual")
     private int ingresoMensual;
 
-
+public Ingresos(String fechaRegistro, int ingresoMensual) {
+    this.fechaDeRegistro = fechaRegistro;
+    this.ingresoMensual = ingresoMensual;
+}
 
 //Getters y Setters
 public Long getId() {
@@ -44,6 +43,20 @@ public int getIngresoMensual() {
 public void setIngresoMensual(int ingresoMensual){
     this.ingresoMensual = ingresoMensual;
 }
+
+public int ingresosUsuario(int ingresos){
+    return ingresos;
+}
+
+public void mostrarInformacionIngresos(){
+    System.out.print("fecha registro: " + fechaDeRegistro);
+    System.out.print("ingresos totales: " + ingresoMensual);
+}
+public static void main(String[] args) {
+    Ingresos ingresos = new Ingresos("25-11-2024", 500000);
+    ingresos.mostrarInformacionIngresos();
+}
+
 
 
 }

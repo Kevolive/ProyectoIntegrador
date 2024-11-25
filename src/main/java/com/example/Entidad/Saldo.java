@@ -41,7 +41,7 @@ public class Saldo{
     }
 
     public static int mostrarSaldo(int ingresos, int gastos) {
-        return ingresos + gastos;
+        return ingresos - gastos;
     }
 
     public static void main(String[] args) {
@@ -51,7 +51,7 @@ public class Saldo{
 
         int resultado = mostrarSaldo(ingresos, gastos);
 
-        System.out.println("El saldo es"  + resultado);
+        System.out.println("El saldo es: "  + resultado);
     }
 }
 

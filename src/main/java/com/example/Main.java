@@ -28,10 +28,11 @@ public class Main {
     // actualizarGastos(4L, 200000, 3000000, 50000, 10000000, 0, 500000, 800000);
     // eliminarRegistro(5L);
     // eliminarGastos(5L);
+    
         
         em.getTransaction().begin();
 
-        Ingresos ingreso = new Ingresos();
+        Ingresos ingreso = new Ingresos(null, 0);
         ingreso.setFechaRegistro("18-11-2024");
         ingreso.setIngresoMensual(5000000);
 
@@ -89,7 +90,7 @@ public class Main {
 
         em.persist(slado1);
 
-        Gastos gastos = new Gastos();
+        Gastos gastos = new Gastos(0, 0, 0, 0, 0, 0, 0);
         gastos.setcomida(500000);
         gastos.setAlquiler(1500000);
         gastos.setTansporte(140000);
@@ -105,6 +106,8 @@ public class Main {
         em.close();
         emf.close();
     }
+    
+
     
     
     // //Leer 

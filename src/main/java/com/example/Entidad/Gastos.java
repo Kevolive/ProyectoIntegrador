@@ -31,7 +31,17 @@ public class Gastos {
     @Column(name = "otros")
     private int otros;
 
+    public Gastos(int comida, int alquiler, int transporte, int nomina, int seguridad, int educacion, int otros){
+        this.comida = comida;
+        this.alquiler = alquiler;
+        this.transporte = transporte;
+        this.nomina = nomina;
+        this.seguridad = seguridad;
+        this.educacion = educacion;
+        this.otros = otros;
+    }
     // getters y setters
+
 
     public Long getId() {
         return id;
@@ -96,5 +106,22 @@ public class Gastos {
     public void setOtros(int otros) {
         this.otros = otros;
     }
+
+
+    
+    
+    public int sumaGastos(){
+        int sumaTotalGastos = comida + alquiler + transporte + nomina + seguridad + educacion + otros;
+        return sumaTotalGastos;
+    }
+    public void mostrarInformacionGastos(){
+        System.out.print("Suma total de gastos: " + sumaGastos());
+    }
+
+    public static void main(String[] args) {
+        Gastos gastos = new Gastos(50000, 100000, 300000, 0, 0, 400000, 0);
+        gastos.mostrarInformacionGastos();
+    }
+
 
 }
